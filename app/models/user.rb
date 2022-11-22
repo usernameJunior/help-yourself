@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :elves
+  has_many :bookings
+  has_many :bookings, through: :elves
 end
