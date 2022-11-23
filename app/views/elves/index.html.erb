@@ -4,6 +4,7 @@
   <% @elves.each do |elf| %>
     <%# Here are all elve's attributes without any layout %>
 
+    <%= link_to elf_path(elf), class: "text-decoration-none text-dark" do %>
     <div class="card-elves">
       <%= cl_image_tag elf.photo.key, height: 240, width: 240, crop: :fill %>
       <div class="card-elves-infos">
@@ -52,5 +53,6 @@
 
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
