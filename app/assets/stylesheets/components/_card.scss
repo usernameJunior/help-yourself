@@ -25,7 +25,6 @@
 
   .card-avis-infos {
     padding: 16px;
-
   }
 
   .card-avis h2 {
@@ -40,6 +39,24 @@
     opacity: .7;
     margin-bottom: 8px;
     margin-top: 8px;
+  }
+
+  .card-elf {
+    overflow: hidden;
+    // height: 120px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    align-items: center;
+    display: flex;
+  }
+  .card-elf-infos {
+    padding: 16px;
+  }
+  .card-elf h3 {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
   }
 }
 @media(max-width: 1200px) {

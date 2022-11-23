@@ -1,11 +1,19 @@
-<h1><%= @elf.name %>details</h1>
-<div class= "elf_details">
-<ul>
-<li><%= @elf.name %></li>
-<li><%= @elf.description %></li>
-<li><%= @elf.speciality %></li>
-<li><%= @elf.powers %></li>
-<li><%= @elf.location %></li>
-<li><%= @elf.price_per_day %></li>
-</ul>
+<h1><strong><%= @elf.name %></strong> details</h1>
+
+<div class= "container-card-hp">
+  <%# TODO : CLASSES CSS POUR card-elf %>
+  <div class="card-elf">
+    <%# TODO: :photo %>
+    <div class="card-elf-infos">
+      <h2><%= @elf.name %></h2>
+      <p><%= @elf.description %></p>
+      <p><h3>Spécialité :</h3> <%= @elf.specialty %></p>
+      <p><h3>Pouvoirs :</h3> <%= @elf.powers %></p>
+      <p><h3>Adresse :</h3> <%= @elf.location %></p>
+      <h3>Prix : <%= @elf.price_per_day %></h3>€ / jour
+    </div>
+  </div>
+
+</div>
+
 <%= link_to "Back to elves list", elves_path %>
