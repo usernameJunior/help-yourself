@@ -1,0 +1,18 @@
+.container-h1 {
+  margin-inline: auto;
+  height: 150px;
+  padding: 20px 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: #b9858572;
+  box-shadow: 0 0 1px 0 rgba(67, 66, 66, 0.367);
+}
+
+h1 {
+  font-family: 'Helvetica';
+  font-size: 36px;
+  font-weight: bold;
+  text-align: left;
+  justify-content: center;
+}
