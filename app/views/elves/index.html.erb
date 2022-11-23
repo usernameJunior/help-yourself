@@ -1,14 +1,22 @@
 <h1>All our <strong>Elves</strong> to help yours<strong>Elves</strong></h1>
 
-  <% @elves.each do |elve| %>
+  <% @elves.each do |elf| %>
 
     <%# Here are all elve's attributes without any layout %>
-    <%= elve.name %><br>
-    <%= elve.description %><br>
-    <%= elve.speciality %><br>
-    <%= elve.powers %><br>
-    <%= elve.location %><br>
-    <%= elve.price_per_day %><br><br>
-    <p>Bibabou</p>
+<div class="container-index">
+
+    <div class="card-elves">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-avis-infos">
+        <strong>Name :</strong><%= elf.name %><br>
+        <strong>Description :</strong><%= elf.description %><br>
+        <strong>Specialités :</strong><%= elf.specialty %><br>
+        <strong>Pouvoirs :</strong><%= elf.powers %><br>
+        <strong>Localisation :</strong><%= elf.location %><br>
+        <strong>Prix/jour :</strong><%= elf.price_per_day %>€<br><br>
+      </div>
+    </div>
+
+</div>
 
   <% end %>
