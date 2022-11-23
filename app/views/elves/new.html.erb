@@ -1,2 +1,9 @@
-<h1>Elves#new</h1>
-<p>Find me in app/views/elves/new.html.erb</p>
+<h1>add a new elf</h1>
+<%= simple_form_for(@elf) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :specialty %>
+  <%= f.input :location %>
+  <%= f.input :price_per_day %>
+  <%= f.submit %>
+<% end %>
