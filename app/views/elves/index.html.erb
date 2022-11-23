@@ -1,4 +1,7 @@
-<h1>All our <strong>Elves</strong> to help yours<strong>Elves</strong></h1>
+<div class="container-h1">
+  <h1>Des <strong>Elfes</strong> adaptés à vos besoins !</h1>
+</div>
+
 
 <div class="container-index">
   <% @elves.each do |elf| %>
@@ -6,51 +9,49 @@
 
     <%= link_to elf_path(elf), class: "text-decoration-none text-dark" do %>
     <div class="card-elves">
-      <%= cl_image_tag elf.photo.key, height: 240, width: 240, crop: :fill %>
+      <div class="img-card-elf">
+      <%= cl_image_tag elf.photo.key, crop: :fill %>
+      </div>
+
       <div class="card-elves-infos">
+      <%# height: 240, width: 240, %>
+        <div class="card-elves-infos-title">
+          <div class="d-flex align-items-center">
 
-        <div class="d-flex align-items-center">
-          <i class="fas fa-user"></i>
-          <div class="ms-2">
-            <h2><%= elf.name %><br></h2>
+            <div class="ms-2">
+              <h2><%= elf.name %><br></h2>
+            </div>
           </div>
         </div>
+        <div class="card-elves-infos-content">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-medal"></i>
+            <div class="ms-2">
+              <%= elf.specialty %><br>
+            </div>
 
-       <div class="d-flex align-items-center">
-          <i class="far fa-book"></i>
-          <div class="ms-2">
-            <%= elf.description %><br>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-bolt"></i>
+            <div class="ms-2">
+              <%= elf.powers %><br>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <i class="fas fa-map-marker"></i>
+            <div class="ms-2">
+              <%= elf.location %><br>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <i class="fas fa-euro-sign"></i>
+            <div class="ms-2">
+              <%= elf.price_per_day %><br>
+            </div>
           </div>
         </div>
-
-      <div class="d-flex align-items-center">
-          <i class="fas fa-medal"></i>
-          <div class="ms-2">
-            <%= elf.specialty %><br>
-          </div>
-        </div>
-
-      <div class="d-flex align-items-center">
-          <i class="fas fa-bolt"></i>
-          <div class="ms-2">
-            <%= elf.powers %><br>
-        </div>
-        </div>
-
-        <div class="d-flex align-items-center">
-          <i class="fas fa-map-marker"></i>
-          <div class="ms-2">
-            <%= elf.location %><br>
-          </div>
-        </div>
-
-        <div class="d-flex align-items-center">
-          <i class="fas fa-euro-sign"></i>
-          <div class="ms-2">
-            <%= elf.price_per_day %><br>
-          </div>
-        </div>
-
       </div>
     </div>
     <% end %>

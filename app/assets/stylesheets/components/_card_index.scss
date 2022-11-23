@@ -1,0 +1,66 @@
+.container-index {
+  padding: 30px 50px;
+  display: grid;
+  justify-content: space-around;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin: auto;
+
+
+  .card-elves {
+    overflow: hidden;
+    height: 200px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    align-items: center;
+    display: flex;
+    border-radius: 4px;
+    gap: 15px;
+  }
+
+  .card-elves img {
+    height: 100%;
+    width: 240px;
+    object-fit: cover;
+  }
+
+  .card-elves-infos-title h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Helvetica';
+  }
+
+  .card-elves-infos-content {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .card-elves-infos {
+    padding: 16px;
+    flex-grow: 1;
+  }
+}
+@media(max-width: 1200px) {
+  .container-index {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: auto;
+  }
+}
+
+@media(max-width: 768px) {
+  .container-index {
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+  .img-card-elf {
+    height: 100%;
+    width: auto;
+    object-fit: fill;
+
+  }
