@@ -1,2 +1,9 @@
-<h1>Elves#show</h1>
-<p>Find me in app/views/elves/show.html.erb</p>
+<h1><%= @elve.name %>details</h1>
+<div class= "elve_details">
+<ul><li><%= @elve.name %></li></ul>
+<ul><li><%= @elve.description %></li></ul>
+<ul><li><%= @elve.speciality %></li></ul>
+<ul><li><%= @elve.powers %></li></ul>
+<ul><li><%= @elve.location %></li></ul>
+<ul><li><%= @elve.price_per_day %></li></ul>
+<%= link_to "Back to elves list", elves_path %>
