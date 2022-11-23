@@ -1,0 +1,31 @@
+.container-elf-show {
+  padding: 20px;
+  display: grid;
+  // justify-content: space-around;
+  // flex-grow: 1;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-gap: 10px;
+
+  .card-elf {
+    overflow: hidden;
+    // height: 120px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    // align-items: center;
+    display: flex;
+  }
+  .card-elf img {
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+  }
+  .card-elf-infos {
+    padding: 16px;
+  }
+  .card-elf h3 {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
