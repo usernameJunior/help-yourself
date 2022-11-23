@@ -1,2 +1,14 @@
-<h1>Elves#index</h1>
-<p>Find me in app/views/elves/index.html.erb</p>
+<h1>All our <strong>Elves</strong> to help yours<strong>Elves</strong></h1>
+
+  <% @elves.each do |elve| %>
+
+    <%# Here are all elve's attributes without any layout %>
+    <%= elve.name %><br>
+    <%= elve.description %><br>
+    <%= elve.speciality %><br>
+    <%= elve.powers %><br>
+    <%= elve.location %><br>
+    <%= elve.price_per_day %><br><br>
+    <p>Bibabou</p>
+
+  <% end %>
