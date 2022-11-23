@@ -1,9 +1,8 @@
 <h1><strong><%= @elf.name %></strong> details</h1>
 
-<div class= "container-card-hp">
-  <%# TODO : CLASSES CSS POUR card-elf %>
+<div class= "container-elf-show">
   <div class="card-elf">
-    <%# TODO: :photo %>
+    <%= cl_image_tag @elf.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-elf-infos">
       <h2><%= @elf.name %></h2>
       <p><%= @elf.description %></p>
