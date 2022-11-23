@@ -7,8 +7,8 @@ puts 'Creating users...'
 paul = User.create!(
   name: "Paul",
   email: "paul@gmail.com",
-  password: "paulpaul"
-  # https://avatars.githubusercontent.com/u/115457690?v=4
+  password: "paulpaul",
+  photo: 'https://avatars.githubusercontent.com/u/115457690?v=4'
 )
 pascal = User.create!(
   name: "Pascal",
