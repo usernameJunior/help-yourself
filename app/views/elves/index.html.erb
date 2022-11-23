@@ -1,22 +1,56 @@
 <h1>All our <strong>Elves</strong> to help yours<strong>Elves</strong></h1>
 
-  <% @elves.each do |elf| %>
-
-    <%# Here are all elve's attributes without any layout %>
 <div class="container-index">
+  <% @elves.each do |elf| %>
+    <%# Here are all elve's attributes without any layout %>
 
     <div class="card-elves">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-avis-infos">
-        <strong>Name :</strong><%= elf.name %><br>
-        <strong>Description :</strong><%= elf.description %><br>
-        <strong>Specialités :</strong><%= elf.specialty %><br>
-        <strong>Pouvoirs :</strong><%= elf.powers %><br>
-        <strong>Localisation :</strong><%= elf.location %><br>
-        <strong>Prix/jour :</strong><%= elf.price_per_day %>€<br><br>
+      <%= cl_image_tag elf.photo.key, height: 240, width: 240, crop: :fill %>
+      <div class="card-elves-infos">
+
+        <div class="d-flex align-items-center">
+          <i class="fas fa-user"></i>
+          <div class="ms-2">
+            <h2><%= elf.name %><br></h2>
+          </div>
+        </div>
+
+       <div class="d-flex align-items-center">
+          <i class="far fa-book"></i>
+          <div class="ms-2">
+            <%= elf.description %><br>
+          </div>
+        </div>
+
+      <div class="d-flex align-items-center">
+          <i class="fas fa-medal"></i>
+          <div class="ms-2">
+            <%= elf.specialty %><br>
+          </div>
+        </div>
+
+      <div class="d-flex align-items-center">
+          <i class="fas fa-bolt"></i>
+          <div class="ms-2">
+            <%= elf.powers %><br>
+        </div>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <i class="fas fa-map-marker"></i>
+          <div class="ms-2">
+            <%= elf.location %><br>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <i class="fas fa-euro-sign"></i>
+          <div class="ms-2">
+            <%= elf.price_per_day %><br>
+          </div>
+        </div>
+
       </div>
     </div>
-
-</div>
-
   <% end %>
+</div>
