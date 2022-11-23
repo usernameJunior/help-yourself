@@ -1,6 +1,6 @@
 class ElvesController < ApplicationController
   def index
-    @elves = Elve.all
+    @elves = Elf.all
   end
 
   def show
