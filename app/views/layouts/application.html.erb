@@ -12,7 +12,10 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <%# TODO : insert banner whith condition if @homepage %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
