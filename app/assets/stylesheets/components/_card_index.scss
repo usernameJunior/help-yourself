@@ -17,6 +17,12 @@
     display: flex;
     border-radius: 4px;
     gap: 15px;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3)
+    }
   }
 
   .card-elves img {

@@ -15,6 +15,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     align-items: center;
     display: flex;
+    border-radius: 4px;
   }
 
   .card-avis img {
@@ -63,7 +64,3 @@
     object-fit: cover;
   }
 }
-
-
-
-

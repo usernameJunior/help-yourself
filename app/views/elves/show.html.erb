@@ -1,18 +1,33 @@
-<h1><strong><%= @elf.name %></strong> details</h1>
+<div class="main-container">
 
-<div class= "container-elf-show">
-  <div class="card-elf">
-    <%= cl_image_tag @elf.photo.key, height: 300, width: 400, crop: :fill %>
-    <div class="card-elf-infos">
-      <h2><%= @elf.name %></h2>
-      <p><%= @elf.description %></p>
-      <p><h3>Spécialité :</h3> <%= @elf.specialty %></p>
-      <p><h3>Pouvoirs :</h3> <%= @elf.powers %></p>
-      <p><h3>Adresse :</h3> <%= @elf.location %></p>
-      <h3>Prix : <%= @elf.price_per_day %></h3>€ / jour
+  <div class= "container-elf-show">
+    <div class="card-elf">
+      <div class="img-card-elf">
+        <%= cl_image_tag @elf.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="card-elf-infos">
+        <div class="card-elves-infos-title">
+          <h2><%= @elf.name %></h2>
+        </div>
+        <div class="card-elves-infos-content">
+          <p><i class="fas fa-info-circle"></i> <%= @elf.description %></p>
+          <p><i class="fas fa-medal"></i> <%= @elf.specialty %></p>
+          <p><i class="fas fa-bolt"></i> <%= @elf.powers %></p>
+          <p><i class="fas fa-map-marker"></i> <%= @elf.location %></p>
+          <p><i class="fas fa-euro-sign"></i> <%= @elf.price_per_day %>€ / jour</p>
+        </div>
+      </div>
+      <p class="btn-reserver"><%= link_to 'Réservez', "#",  class: "btn btn-primary" %></p>
     </div>
+
   </div>
 
+  <div class="container-form-booking">
+<%# controller stimulus pour afficher formulaire ds btn reserver %>
+    <%# <%= simple_form_for(@booking) do |f| %>
+      <%# <%= f.input :checkin, input_html: { class: "datepicker" } %>
+      <%# <%= f.input :checkout, input_html: { class: "datepicker" } %>
+    <%# <% end %>
+  </div>
 </div>
-
-<%= link_to "Back to elves list", elves_path, class: "btn btn-primary" %>
+<%# <%= link_to "Back to elves list", elves_path, class: "btn btn-primary" %>

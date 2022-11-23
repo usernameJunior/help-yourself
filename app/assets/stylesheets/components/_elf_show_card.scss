@@ -1,6 +1,5 @@
 .container-elf-show {
-  padding: 20px;
-  display: grid;
+  padding: 50px;
   // justify-content: space-around;
   // flex-grow: 1;
   // grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -13,19 +12,43 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     // align-items: center;
     display: flex;
+    border-radius: 4px;
+    gap: 15px;
+
   }
   .card-elf img {
-    height: 100%;
-    width: 50%;
+    // height: 100%;
+    // width: auto;
     object-fit: cover;
   }
-  .card-elf-infos {
-    padding: 16px;
-  }
-  .card-elf h3 {
-    display: inline-block;
-    font-size: 16px;
+
+  .card-elf .card-elves-infos-title h2 {
+    font-size: 32px;
     font-weight: bold;
     margin: 0;
+    font-family: 'Helvetica';
+  }
+
+  .card-elf-infos {
+    padding: 30px;
+    line-height: 1.7;
+    flex-grow: 1;
+    position: relative;
+  }
+
+  .card-elf p {
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.7;
+  }
+
+  .card-elves-infos-content {
+    padding-top: 15px;
+  }
+
+  .btn-reserver {
+  position: absolute;
+  right: 80px;
+  bottom: 80px;
   }
 }
