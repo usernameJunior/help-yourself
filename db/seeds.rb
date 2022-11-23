@@ -101,7 +101,7 @@ puts 'Creating elves...'
 Elf.create!(
   name: "Dobby",
   description: "Dobby est le golden slave, malgré ses rêves de liberté il fera le parfait esclave pour vos tâches ménagères. Son petit corps tout frêle est parfait pour prendre des coups.",
-  speciality: "prendre des coups",
+  specialty: "prendre des coups",
   powers: "incassable",
   location: "Paris",
   price_per_day: 150,
@@ -111,7 +111,7 @@ Elf.create!(
 Elf.create!(
   name: "Hokey",
   description: "Hokey est l'elfe parfait pour régler vos comptes. Spécialiste de l'empoisonnement il saura vous débarasser de vos ennemis.",
-  speciality: "assassinat",
+  specialty: "assassinat",
   powers: "chocolat chaud empoisonné",
   location: "Nantes",
   price_per_day: 41,
@@ -121,7 +121,7 @@ Elf.create!(
 Elf.create!(
   name: "Hooky",
   description: "Hooky excelle dans l'art d'être immobile. Dès lors, il pourra faire office de table ou de chaise. Il vous suffit de lui dire pas bouger.",
-  speciality: "La table et la chaise",
+  specialty: "La table et la chaise",
   powers: "statue",
   location: "Bayonne",
   price_per_day: 23,
@@ -131,7 +131,7 @@ Elf.create!(
 Elf.create!(
   name: "Kreattur",
   description: "Kreattur est un elfe de maison agé qui dispose d'un CV exceptionnel. Riche de longues années d'experience il sera en mesure de tout faire.",
-  speciality: "multitâche",
+  specialty: "multitâche",
   powers: "couteau suisse",
   location: "Lyon",
   price_per_day: 52,
@@ -141,7 +141,7 @@ Elf.create!(
 Elf.create!(
   name: "Winky",
   description: "Issu d'une longue lignée d'elfes de maison. Winky est attaché aux traditions, son souhait le plus cher est de conserver son statut de larbin.",
-  speciality: "être un larbin",
+  specialty: "être un larbin",
   powers: "génétique de larbin",
   location: "Marseille",
   price_per_day: 12,
@@ -151,7 +151,7 @@ Elf.create!(
 Elf.create!(
   name: "Gollum",
   description: "Gollum est un elfe de maison schizophrène qui alterne entre gentillesse et méchanceté. Tenez vos bijoux à l'écart de cette énergumène au risque de l'entendre marmonner mon précieux.",
-  speciality: "Vol à la tire",
+  specialty: "Vol à la tire",
   powers: "Sméagol",
   location: "Vésuve",
   price_per_day: 69,
@@ -161,7 +161,7 @@ Elf.create!(
 Elf.create!(
   name: "Butters",
   description: "Butters est juste une victime.",
-  speciality: "être une victime",
+  specialty: "être une victime",
   powers: "victime sans égal",
   location: "Bordeaux",
   price_per_day: 1,
@@ -171,7 +171,7 @@ Elf.create!(
 Elf.create!(
   name: "Elfo",
   description: "Détenteur du titre d'elfe de maison le plus teubé du monde et doté d'une connerie sans limite il saura vous divertir.",
-  speciality: "bouffon",
+  specialty: "bouffon",
   powers: "con suprême",
   location: "Paris",
   price_per_day: 3,
@@ -181,7 +181,7 @@ Elf.create!(
 Elf.create!(
   name: "Pitts",
   description: "Pitts est un fin gourmet. Non seulement ses plats sont d'une grande qualité mais il peut également servir de gouteur et de poubelle de table.",
-  speciality: "cuisine",
+  specialty: "cuisine",
   powers: "5 stars michelin",
   location: "Toulouse",
   price_per_day: 42,
@@ -191,7 +191,7 @@ Elf.create!(
 Elf.create!(
   name: "Sam",
   description: "Sam est un porteur de renom qui peut vous emmener où vous voulez. Doté de longs pieds poilus et d'un centre de gravité bas il saura emprunté les chemins les plus escarpés.",
-  speciality: "moyen de locomotion",
+  specialty: "moyen de locomotion",
   powers: "porteur",
   location: "Strasbourg",
   price_per_day: 14,
@@ -201,7 +201,7 @@ Elf.create!(
 Elf.create!(
   name: "lutin",
   description: "Lutin est parfait pour faire vos emballages.",
-  speciality: "déménagement",
+  specialty: "déménagement",
   powers: "rouleau",
   location: "Rennes",
   price_per_day: 21,
@@ -210,7 +210,7 @@ Elf.create!(
 Elf.create!(
   name: "Moignon",
   description: "Moignon est un elfe de maison handicapé. Jamais bien loin, il sera un compagnon fidèle.",
-  speciality: "acte de présence",
+  specialty: "acte de présence",
   powers: "roulade",
   location: "Lille",
   price_per_day: 99,
@@ -220,7 +220,7 @@ Elf.create!(
 Elf.create!(
   name: "Pot",
   description: "Passioné de verdure, Pot excelle dans l'entretien des jardins",
-  speciality: "jardinage",
+  specialty: "jardinage",
   powers: "Terreau",
   location: "Versailles",
   price_per_day: 12,
@@ -230,7 +230,7 @@ Elf.create!(
 Elf.create!(
   name: "Papotte",
   description: "Papotte est une oreille attentive. Elle sera parfaite pour vous tenir compagnie.",
-  speciality: "écouter",
+  specialty: "écouter",
   powers: "ultrason",
   location: "Grenoble",
   price_per_day: 41,
@@ -240,7 +240,7 @@ Elf.create!(
 Elf.create!(
   name: "Poppy",
   description: "Poppy livre depuis son plus jeune âge. Elle pourra transporter tout ce que vous lui demanderez.",
-  speciality: "livraison",
+  specialty: "livraison",
   powers: "ubereats",
   location: "Biaritz",
   price_per_day: 1,
