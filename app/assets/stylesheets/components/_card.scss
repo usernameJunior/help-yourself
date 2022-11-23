@@ -81,3 +81,64 @@
     object-fit: cover;
   }
 }
+
+
+
+.container-index {
+  padding: 20px;
+  display: grid;
+  justify-content: space-around;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
+  .card-elves {
+    overflow: hidden;
+    height: 240px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    align-items: center;
+    display: flex;
+  }
+
+  .card-elves img {
+    height: 100%;
+    width: 240px;
+    object-fit: cover;
+  }
+
+  .card-elves h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-elves p {
+    font-size: 11px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .card-elves-infos {
+    padding: 16px;
+    flex-grow: 1;
+  }
+}
+@media(max-width: 1200px) {
+  .container-index {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .container-index {
+    grid-template-columns: 1fr;
+  }
+}
+  .card-elves img {
+    height: 100%;
+    width: auto;
+    object-fit: fill;
+
+  }
