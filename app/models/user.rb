@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   has_many :elves, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  has_many :bookings, through: :elves
 
   validates :name, presence: true
 end
