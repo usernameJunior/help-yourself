@@ -1,9 +1,11 @@
 <h1><%= @elf.name %>details</h1>
 <div class= "elf_details">
-<ul><li><%= @elf.name %></li></ul>
-<ul><li><%= @elf.description %></li></ul>
-<ul><li><%= @elf.speciality %></li></ul>
-<ul><li><%= @elf.powers %></li></ul>
-<ul><li><%= @elf.location %></li></ul>
-<ul><li><%= @elf.price_per_day %></li></ul>
+<ul>
+<li><%= @elf.name %></li>
+<li><%= @elf.description %></li>
+<li><%= @elf.speciality %></li>
+<li><%= @elf.powers %></li>
+<li><%= @elf.location %></li>
+<li><%= @elf.price_per_day %></li>
+</ul>
 <%= link_to "Back to elves list", elves_path %>
