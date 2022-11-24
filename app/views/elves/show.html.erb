@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="container-form-booking inactive" data-display-booking-target="form">
+  <div class="container-form-booking <%= 'inactive' unless @booking.errors.any? %>" data-display-booking-target="form">
     <div class="form-booking">
       <%= simple_form_for [@elf, @booking] do |f| %>
         <%= f.input :checkin, html5: true %>
