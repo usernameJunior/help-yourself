@@ -21,12 +21,14 @@
 
   </div>
 
-<div class="container-form-booking">
-    <%= simple_form_for [@elf, @booking] do |f| %>
-      <%= f.input :checkin, html5: true %>
-      <%= f.input :checkout, html5: true %>
-      <%= f.button :submit, value: "Réserver", class: "btn btn-primary"%>
-    <% end %>
+  <div class="container-form-booking">
+      <%= simple_form_for [@elf, @booking] do |f| %>
+        <%= f.input :checkin, html5: true %>
+        <%= f.input :checkout, html5: true %>
+        <%= f.button :submit, value: "Réserver", class: "btn btn-primary"%>
+      <% end %>
+  </div>
+
 </div>
-</div>
+
 <%= link_to "Back to elves list", elves_path, class: "btn btn-primary" %>
