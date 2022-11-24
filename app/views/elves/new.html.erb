@@ -7,5 +7,6 @@
   <%= f.input :powers, label: "Pouvoirs", :required => false %>
   <%= f.input :location, label: "Localisation", :required => false%>
   <%= f.input :price_per_day, label: "Prix/jour €", :required => false %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, "Soumettre" %>
 <% end %>

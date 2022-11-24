@@ -27,6 +27,6 @@ class ElvesController < ApplicationController
   private
 
   def elf_params
-    params.require(:elf).permit(:name, :description, :powers, :specialty, :location, :price_per_day)
+    params.require(:elf).permit(:name, :description, :powers, :specialty, :location, :price_per_day, :photo)
   end
 end
