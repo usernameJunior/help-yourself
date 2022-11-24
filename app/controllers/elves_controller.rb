@@ -13,4 +13,20 @@ class ElvesController < ApplicationController
   def new
     @elf = Elf.new
   end
+
+  def create
+    @elf = Elf.new(elf_params)
+    @elf.user = current_user
+    if @elf.save!
+      redirect_to elf_path(@elf)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def elf_params
+    params.require(:elf).permit(:name, :description, :powers, :specialty, :location, :price_per_day)
+  end
 end
