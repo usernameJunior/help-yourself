@@ -1,8 +1,19 @@
-<h1>Dashboard</h1>
+<h1>Tableau de bord</h1>
+
+<h2>Mes elfes</h2>
+
+<div class="owner-elf-container">
+  <% @elves.each do |elf| %>
+    <div class="owner-elf-card">
+      <%= cl_image_tag elf.photo.key, crop: :fill %>
+      <%= elf.name %>
+    </div>
+  <% end %>
+</div>
 
 <h2>Les elfes que j'ai réservés</h2>
 
-<% @bookings_as_renter.each do |booking| %>
+<% @bookings.each do |booking| %>
   <%= booking.elf.name %><br>
   <%= booking.status %><br>
   <%= booking.checkin %><br>
