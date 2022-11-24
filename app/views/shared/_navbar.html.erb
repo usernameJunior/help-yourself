@@ -13,19 +13,31 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%# <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Louez votre elfe", '#', class: "nav-link" %>
           </li>
+
+          <%# Displays user name if user logged, else 'Log In' %>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <% if user_signed_in? %>
+                <span class="navbar-user-name nav-link"><%= current_user.name %></span>
+            <% else %>
+                <%= link_to "Log In", new_user_session_path, class: "navbar-user-name nav-link" %>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Mettre en ligne mon elfe", new_elf_path, class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+
+              <%# Displays 'Log In' if no user logged, 'Log Out' else %>
+              <% if user_signed_in? %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              <% else %>
+                <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+              <% end %>
             </div>
           </li>
         <%# <% else %>
