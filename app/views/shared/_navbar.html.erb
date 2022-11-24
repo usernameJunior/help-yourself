@@ -22,7 +22,7 @@
             <% if user_signed_in? %>
                 <span class="navbar-user-name nav-link"><%= current_user.name %></span>
             <% else %>
-                <%= link_to "Log In", new_user_session_path, class: "navbar-user-name nav-link" %>
+                <%= link_to "Log In", new_user_session_path, class: "navbar-log-in nav-link" %>
             <% end %>
           </li>
           <li class="nav-item dropdown">
