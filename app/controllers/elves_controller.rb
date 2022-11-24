@@ -5,6 +5,7 @@ class ElvesController < ApplicationController
 
   def show
     @elf = Elf.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
