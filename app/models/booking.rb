@@ -2,18 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :elf
 
-  validates :checkin
+  validates :checkin, presence: true
   validates :checkout, presence: true
-  validates :checkout_after_checkin
-
-  private
-
-  def checkout_after_checkin
-    return if checkout.blank? || checkin.blank?
-
-    if checkout < checkin
-      errors.add(:checkout, "doit être après le check-in")
-    end
-  end
-
+  validates :checkout, comparison: { greater_than: :checkin }
 end
