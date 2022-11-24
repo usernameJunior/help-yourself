@@ -1,9 +1,11 @@
-<h1>add a new elf</h1>
-<%= simple_form_for(@elf) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :specialty %>
-  <%= f.input :location %>
-  <%= f.input :price_per_day %>
-  <%= f.submit %>
+<h1>Formulaire d'insciption</h1>
+<%= simple_form_for @elf do |f| %>
+
+  <%= f.input :name, label: "Nom", :required => false %>
+  <%= f.input :description, label: "Description", :required => false %>
+  <%= f.input :specialty, label: "Specialités", :required => false %>
+  <%= f.input :powers, label: "Pouvoirs", :required => false %>
+  <%= f.input :location, label: "Localisation", :required => false%>
+  <%= f.input :price_per_day, label: "Prix/jour €", :required => false %>
+  <%= f.button :submit, "Soumettre" %>
 <% end %>

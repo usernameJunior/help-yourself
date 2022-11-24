@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Root route to homepage
   root to: "pages#home"
   # App routes
-  resources :elves, only: %i[index show] do
+  resources :elves, only: %i[index show new create] do
     resources :bookings, only: %i[create]
   end
 

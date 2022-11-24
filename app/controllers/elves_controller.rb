@@ -10,4 +10,10 @@ class ElvesController < ApplicationController
   def new
     @elf = Elf.new
   end
+
+  def create
+    @elf = Elf.new(elf_params)
+    @elf.save
+    redirect_to elf_path
+  end
 end
