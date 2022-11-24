@@ -1,2 +1,21 @@
-<h1>Owner::Bookings#index</h1>
-<p>Find me in app/views/owner/bookings/index.html.erb</p>
+<h1>Dashboard</h1>
+
+<h2>Les elfes que j'ai réservés</h2>
+
+<% @bookings_as_renter.each do |booking| %>
+  <%= booking.elf.name %><br>
+  <%= booking.status %><br>
+  <%= booking.checkin %><br>
+  <%= booking.checkout %><br>
+<% end %>
+
+<h2>Les réservations de mes elfes</h2>
+
+<% @elves.each do |elf| %>
+  <% elf.bookings.each do |booking| %>
+  <%= booking.elf.name %><br>
+  <%= booking.status %><br>
+  <%= booking.checkin %><br>
+  <%= booking.checkout %><br>
+  <% end %>
+<% end %>
