@@ -1,15 +1,7 @@
 <h1>Tableau de bord</h1>
 
-<h2>Mes elfes</h2>
-
-<div class="owner-elf-container">
-  <% @elves.each do |elf| %>
-    <div class="owner-elf-card">
-      <%= cl_image_tag elf.photo.key, crop: :fill %>
-      <%= elf.name %>
-    </div>
-  <% end %>
-</div>
+<h2>Mes demandes de réservation</h2>
+<p>TODO : bookings à accepter ou décliner</p>
 
 <h2>Les elfes que j'ai réservés</h2>
 
@@ -30,3 +22,22 @@
   <%= booking.checkout %><br>
   <% end %>
 <% end %>
+
+<h2>Tous mes elfes</h2>
+
+<div class="owner-elf-container">
+  <% @elves.each do |elf| %>
+    <div class="owner-elf-card">
+      <%= link_to elf_path(elf), class: "text-decoration-none text-dark" do %>
+        <%= cl_image_tag elf.photo.key %>
+        <p><%= elf.name %></p>
+      <% end %>
+    </div>
+  <% end %>
+    <div class="owner-elf-card">
+      <%= link_to new_elf_path, class: "text-decoration-none text-dark" do %>
+        <%= image_tag 'avatar.png', class: 'owner-add-elf-img' %>
+        <p class="owner-add-elf-p">Nouvel elfe</p>
+      <% end %>
+    </div>
+</div>
