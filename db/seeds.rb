@@ -7,93 +7,127 @@ puts 'Creating users...'
 paul = User.create!(
   name: "Paul",
   email: "paul@gmail.com",
-  password: "paulpaul",
-  # photo: 'https://avatars.githubusercontent.com/u/115457690?v=4'
+  password: "paulpaul"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/115457690?v=4")
+paul.photo.attach(io: file, filename: "paul.png", content_type: "image/png")
+paul.save
 pascal = User.create!(
   name: "Pascal",
   email: "pascal@gmail.com",
-  password: "pascal2",
-  # photo: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665753921/dwgbyytnbusf1ieyr1xv.jpg'
+  password: "pascal2"
 )
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665753921/dwgbyytnbusf1ieyr1xv.jpg")
+pascal.photo.attach(io: file, filename: "pascal.png", content_type: "image/png")
+pascal.save
 marine = User.create!(
   name: "Marine",
   email: "marine@gmail.com",
-  password: "marine3",
-  # photo: 'https://avatars.githubusercontent.com/u/115457745?v=4'
+  password: "marine3"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/115457745?v=4")
+marine.photo.attach(io: file, filename: "marine.png", content_type: "image/png")
+marine.save
 etienne = User.create!(
   name: "Etienne",
   email: "etienne@gmail.com",
-  password: "etienne4",
-  # photo: 'https://avatars.githubusercontent.com/u/115457772?v=4'
+  password: "etienne4"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/115457772?v=4")
+etienne.photo.attach(io: file, filename: "etienne.png", content_type: "image/png")
+etienne.save
 celine = User.create!(
   name: "Céline",
   email: "céline@gmail.com",
-  password: "céline5",
-  # photo: 'https://avatars.githubusercontent.com/u/63117073?v=4'
+  password: "céline5"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/63117073?v=4")
+celine.photo.attach(io: file, filename: "celine.png", content_type: "image/png")
+celine.save
 pierre = User.create!(
   name: "Pierre",
   email: "pierre@gmail.com",
-  password: "pierre6",
-  # photo: 'https://avatars.githubusercontent.com/u/84989859?v=4'
+  password: "pierre6"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/84989859?v=4")
+pierre.photo.attach(io: file, filename: "pierre.png", content_type: "image/png")
+pierre.save
 theo = User.create!(
   name: "Théo",
   email: "théo@gmail.com",
-  password: "théothéo",
-  # photo: 'https://avatars.githubusercontent.com/u/13200345?v=4'
+  password: "théothéo"
 )
-User.create!(
+file = URI.open("https://avatars.githubusercontent.com/u/13200345?v=4")
+theo.photo.attach(io: file, filename: "theo.png", content_type: "image/png")
+theo.save
+alexandre = User.create!(
   name: "Alexandre",
   email: "alexandre@gmail.com",
-  password: "alexandre8",
-  # photo: 'https://avatars.githubusercontent.com/u/115428837?v=4'
+  password: "alexandre8"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/115428837?v=4")
+alexandre.photo.attach(io: file, filename: "alexandre.png", content_type: "image/png")
+alexandre.save
 ruben = User.create!(
   name: "Ruben",
   email: "ruben@gmail.com",
-  password: "ruben9",
-  # photo: 'https://avatars.githubusercontent.com/u/113209489?v=4'
+  password: "ruben9"
 )
-User.create!(
+file = URI.open("https://avatars.githubusercontent.com/u/113209489?v=4")
+ruben.photo.attach(io: file, filename: "ruben.png", content_type: "image/png")
+ruben.save
+chloe = User.create!(
   name: "Chloé",
   email: "chloé@gmail.com",
-  password: "chloé10",
-  # photo: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1666016769/vgyu0dk8aofyzsiojg0c.jpg'
+  password: "chloé10"
 )
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1666016769/vgyu0dk8aofyzsiojg0c.jpg")
+chloe.photo.attach(io: file, filename: "chloe.png", content_type: "image/png")
+chloe.save
 vincent = User.create!(
   name: "Vincent",
   email: "vincent@gmail.com",
-  password: "vincent11",
-  # photo: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1667661127/m6rrtadg1s6vkektoars.jpg'
+  password: "vincent11"
 )
-User.create!(
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1667661127/m6rrtadg1s6vkektoars.jpg")
+vincent.photo.attach(io: file, filename: "vincent.png", content_type: "image/png")
+vincent.save
+
+yann = User.create!(
   name: "Yann",
   email: "yann@gmail.com",
-  password: "yann12",
-  # photo: 'https://avatars.githubusercontent.com/u/108346075?v=4'
+  password: "yann12"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/108346075?v=4")
+yann.photo.attach(io: file, filename: "yann.png", content_type: "image/png")
+yann.save
+
 johann = User.create!(
   name: "Johann",
   email: "johann@gmail.com",
-  password: "johann13",
-  # photo: 'https://avatars.githubusercontent.com/u/107849955?v=4'
+  password: "johann13"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/107849955?v=4")
+johann.photo.attach(io: file, filename: "johann.png", content_type: "image/png")
+johann.save
+
 benoit = User.create!(
   name: "Benoît",
   email: "benoît@gmail.com",
-  password: "benoit14",
-  # photo: 'https://avatars.githubusercontent.com/u/98309491?v=4'
+  password: "benoit14"
 )
-User.create!(
+file = URI.open("https://avatars.githubusercontent.com/u/98309491?v=4")
+benoit.photo.attach(io: file, filename: "benoit.png", content_type: "image/png")
+benoit.save
+
+sam = User.create!(
   name: "Sam",
   email: "sam@gmail.com",
-  password: "samsam",
-  # photo: 'https://avatars.githubusercontent.com/u/115042573?v=4'
+  password: "samsam"
 )
+file = URI.open("https://avatars.githubusercontent.com/u/115042573?v=4")
+sam.photo.attach(io: file, filename: "sam.png", content_type: "image/png")
+sam.save
 
 puts 'Users created !'
 puts 'Creating elves...'
@@ -112,7 +146,7 @@ dobby.photo.attach(io: file, filename: "dobby.png", content_type: "image/png")
 dobby.save
 hokey = Elf.create!(
   name: "Hokey",
-  description: "Hokey est l'elfe parfait pour régler vos comptes. Spécialiste de l'empoisonnement il saura vous débarasser de vos ennemis.",
+  description: "Hokey est l'elfe parfait pour régler vos comptes. Spécialiste de l'empoisonnement il sera en mesure de se débarasser de vos ennemis.",
   specialty: "assassinat",
   powers: "chocolat chaud empoisonné",
   location: "Nantes",
@@ -136,7 +170,7 @@ hooky.photo.attach(io: file, filename: "hooky.png", content_type: "image/png")
 hooky.save
 kreattur = Elf.create!(
   name: "Kreattur",
-  description: "Kreattur est un elfe de maison agé qui dispose d'un CV exceptionnel. Riche de longues années d'experience il sera en mesure de tout faire.",
+  description: "Kreattur est un elfe de maison agé qui dispose d'un CV exceptionnel. Riche de longues années d'experience il peut littéralement tout faire.",
   specialty: "multitâche",
   powers: "couteau suisse",
   location: "Lyon",
@@ -155,7 +189,7 @@ winky = Elf.create!(
   price_per_day: 12,
   user_id: benoit.id
 )
-file = URI.open("https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D100067518962299&imgrefurl=https%3A%2F%2Fm.facebook.com%2F113474770511247%2Fphotos%2Fa.113474813844576%2F113475347177856%2F&tbnid=6F2dZ4-XzJc3OM&vet=10CAsQxiAoAWoXChMIqJeznIbE-wIVAAAAAB0AAAAAEA4..i&docid=Ho4ugpXd3t16DM&w=502&h=502&itg=1&q=winky%20harry%20potter&ved=0CAsQxiAoAWoXChMIqJeznIbE-wIVAAAAAB0AAAAAEA4")
+file = URI.open("https://pbs.twimg.com/profile_images/770964704089047040/ienv3SCL_400x400.jpg")
 winky.photo.attach(io: file, filename: "winky.png", content_type: "image/png")
 winky.save
 gollum = Elf.create!(
@@ -174,7 +208,7 @@ butters = Elf.create!(
   name: "Butters",
   description: "Butters est juste une victime.",
   specialty: "être une victime",
-  powers: "victime sans égal",
+  powers: "victime sans égale",
   location: "Bordeaux",
   price_per_day: 1,
   user_id: pierre.id
@@ -227,7 +261,7 @@ lutin = Elf.create!(
   price_per_day: 21,
   user_id: theo.id
 )
-file = URI.open("https://i.pinimg.com/originals/fd/f7/07/fdf7076a17434bc9217ea4f955212347.jpg")
+file = URI.open("https://i.skyrock.net/4763/22924763/pics/667294813_small.jpg")
 lutin.photo.attach(io: file, filename: "lutin.png", content_type: "image/png")
 lutin.save
 moignon = Elf.create!(
