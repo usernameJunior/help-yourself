@@ -34,7 +34,7 @@
 
               <%# Displays 'Log In' if no user logged, 'Log Out' else %>
               <% if user_signed_in? %>
-                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item fw-bold", data: {turbo_method: :delete} %>
               <% else %>
                 <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
               <% end %>
