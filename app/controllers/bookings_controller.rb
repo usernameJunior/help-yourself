@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
   def create
     @elf = Elf.find(params[:elf_id])
     @booking = Booking.new(booking_params)
+    @booking.elf = @elf
+    @booking.user = current_user
     if @booking.save
       redirect_to elves_path
     else

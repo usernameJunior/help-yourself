@@ -1,0 +1,20 @@
+.container-form-booking {
+  display: flex;
+  padding: 30px;
+  align-content: center;
+  justify-content: center;
+  // height: 100vh;
+  // width: 100vw;
+}
+
+.form-booking {
+  width: 400px;
+  padding: 50px 30px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+
+}
+.inactive{
+  display: none;
+}
