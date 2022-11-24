@@ -1,6 +1,7 @@
 # Destroy all before seed
-User.destroy_all
+require 'date'
 Elf.destroy_all
+User.destroy_all
 
 puts 'Creating users...'
 
@@ -314,4 +315,51 @@ poppy.photo.attach(io: file, filename: "poppy.png", content_type: "image/png")
 poppy.save
 
 puts 'Elves created !'
+puts 'Creating bookings...'
+
+Booking.create!(
+  user_id: paul.id,
+  elf_id: papotte.id,
+  checkin: DateTime.now + 1,
+  checkout: DateTime.now + 5,
+  total_price: 4,
+  status: "pending"
+)
+
+Booking.create!(
+  user_id: johann.id,
+  elf_id: moignon.id,
+  checkin: DateTime.now + 2,
+  checkout: DateTime.now + 9,
+  total_price: 693,
+  status: "settled"
+)
+
+Booking.create!(
+  user_id: pascal.id,
+  elf_id: dobby.id,
+  checkin: DateTime.now + 10,
+  checkout: DateTime.now + 20,
+  total_price: 1500,
+  status: "declined"
+)
+
+Booking.create!(
+  user_id: theo.id,
+  elf_id: sam.id,
+  checkin: DateTime.now + 2,
+  checkout: DateTime.now + 6,
+  total_price: 56,
+  status: "settled"
+)
+
+Booking.create!(
+  user_id: benoit.id,
+  elf_id: butters.id,
+  checkin: DateTime.now + 3,
+  checkout: DateTime.now + 305,
+  total_price: 302,
+  status: "settled"
+)
+puts 'bookings created !'
 puts 'Seeds done !'
