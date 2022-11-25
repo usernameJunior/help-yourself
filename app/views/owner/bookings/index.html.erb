@@ -1,43 +1,56 @@
-<h1>Tableau de bord</h1>
+<h1 class="ms-5">Tableau de bord</h1>
 
-<h2>Mes demandes de réservation</h2>
-<p>TODO : bookings à accepter ou décliner</p>
+<div class="container-dashboard">
+  <div class="dashboard my-bookings">
+    <h2>Mes réservations</h2>
+    <div class="card mybookings">
+      <div class="elf-grid">
+        <% @bookings.each do |booking| %>
+          <div class="owner-elf-card">
+          <%= cl_image_tag booking.elf.photo.key %>
+            <%= booking.elf.name %><br>
+            <%= booking.status %><br>
+            <%= booking.checkin %><br>
+            <%= booking.checkout %><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-<h2>Les elfes que j'ai réservés</h2>
-
-<% @bookings.each do |booking| %>
-  <%= booking.elf.name %><br>
-  <%= booking.status %><br>
-  <%= booking.checkin %><br>
-  <%= booking.checkout %><br>
-<% end %>
-
-<h2>Les réservations de mes elfes</h2>
-
-<% @elves.each do |elf| %>
-  <% elf.bookings.each do |booking| %>
-  <%= booking.elf.name %><br>
-  <%= booking.status %><br>
-  <%= booking.checkin %><br>
-  <%= booking.checkout %><br>
-  <% end %>
-<% end %>
+  <div class="dashboard elves-bookings">
+    <h2>Les réservations de mes elfes</h2>
+    <div class="card mybookings">
+      <div class="elf-grid">
+        <% @elves.each do |elf| %>
+          <% elf.bookings.each do |booking| %>
+            <div class="owner-elf-card">
+              <%= booking.elf.name %><br>
+              <%= booking.status %><br>
+              <%= booking.checkin %><br>
+              <%= booking.checkout %><br>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h2>Tous mes elfes</h2>
-
 <div class="owner-elf-container">
-  <% @elves.each do |elf| %>
-    <div class="owner-elf-card">
-      <%= link_to elf_path(elf), class: "text-decoration-none text-dark" do %>
-        <%= cl_image_tag elf.photo.key %>
-        <p><%= elf.name %></p>
-      <% end %>
-    </div>
-  <% end %>
-    <div class="owner-elf-card">
-      <%= link_to new_elf_path, class: "text-decoration-none text-dark" do %>
-        <%= image_tag 'avatar.png', class: 'owner-add-elf-img' %>
-        <p class="owner-add-elf-p">Nouvel elfe</p>
-      <% end %>
-    </div>
-</div>
+    <% @elves.each do |elf| %>
+      <div class="owner-elf-card">
+        <%= link_to elf_path(elf), class: "text-decoration-none text-dark" do %>
+          <%= cl_image_tag elf.photo.key %>
+          <p><%= elf.name %></p>
+        <% end %>
+      </div>
+    <% end %>
+      <div class="owner-elf-card">
+        <%= link_to new_elf_path, class: "text-decoration-none text-dark" do %>
+          <%= image_tag 'avatar.png', class: 'owner-add-elf-img' %>
+          <p class="owner-add-elf-p">Nouvel elfe</p>
+        <% end %>
+      </div>
+  </div>
