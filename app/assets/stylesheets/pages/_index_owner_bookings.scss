@@ -1,5 +1,9 @@
 h2 {
-  margin-left: 2rem;
+  margin: 2rem;
+  border-radius: 6px;
+  background-color: #b9858546;
+  font-weight: bold;
+  padding: 10px;
 }
 .container-dashboard {
   display: flex;
@@ -20,11 +24,16 @@ h2 {
   }
 
   .dashboard {
-    border-color: lightgrey 1px solid;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 6px;
+    border-radius: 4px;
     margin: 10px;
     padding: 10px;
+
+    h2 {
+      border-radius: 6px;
+      background-color: #b9858546;
+      font-weight: bold;
+      padding: 10px;
+    }
 
     .card {
       // overflow: hidden;
@@ -33,17 +42,15 @@ h2 {
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       align-items: left;
       // display: flex;
-      border-radius: 15px;
+      border-radius: 8px;
       margin: 2rem;
       padding: 1rem;
 
-      // .elf-grid {
-      //   display: grid;
-      //   grid-template-columns: repeat(5, 1fr);
-      //   grid-gap: 10px;
-      //   grid-auto-rows: minmax(100px, auto);
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
 
-      // }
+      }
     }
   }
 
@@ -56,6 +63,7 @@ h2 {
   .my-bookings {
     flex-direction: row;
     width: 50vw;
+
 
   }
 }
