@@ -53,6 +53,28 @@
   }
 }
 
+.btn_return_show {
+  border: solid 2px;
+  color: $elf;
+  border-color: $elf;
+  text-decoration: none;
+  padding: 6px;
+  margin-left: 50px;
+  transition-duration: 0.2s;
+}
+
+.btn_return_show:hover{
+  border: solid 2px;
+  border-right: 0px;
+  border-left: 0px;
+  color: $elf;
+  border-color: $elf;
+  text-decoration: none;
+  padding: 6px;
+  margin-left: 50px;
+  letter-spacing: 1px;
+  }
+
 .btn_booking_show {
  text-align: right;
 }
