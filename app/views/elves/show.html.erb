@@ -25,7 +25,7 @@
       <%= simple_form_for [@elf, @booking] do |f| %>
         <%= f.input :checkin, html5: true %>
         <%= f.input :checkout, html5: true %>
-        <%= f.button :submit, elf_bookings_path(@elf), value: "Réserver", class: "btn btn-primary text-align-right"%>
+        <%= f.button :submit, value: "Réserver", class: "btn btn-primary text-align-right"%>
       <% end %>
     </div>
   </div>
