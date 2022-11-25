@@ -14,7 +14,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <%= link_to "Tableau de bord", owner_bookings_path, class: "nav-link" %>
+              <% if user_signed_in? %>
+                <%= link_to "Tableau de bord", owner_bookings_path, class: "nav-link" %>
+              <% end %>
+
           </li>
 
           <%# Displays user name if user logged, else 'Log In' %>
@@ -28,9 +31,6 @@
           <li class="nav-item dropdown">
             <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Voir mes réservations", owner_bookings_path, class: "dropdown-item" %>
-              <%= link_to "Mettre en ligne mon elfe", new_elf_path, class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
 
               <%# Displays 'Log In' if no user logged, 'Log Out' else %>
               <% if user_signed_in? %>

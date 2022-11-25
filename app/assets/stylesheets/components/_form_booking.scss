@@ -18,3 +18,13 @@
 .inactive{
   display: none;
 }
+
+.total_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total_price p{
+ margin-top: 30px;
+}

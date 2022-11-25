@@ -15,7 +15,9 @@
           <p><i class="fas fa-map-marker"></i> <%= @elf.location %></p>
           <p><i class="fas fa-euro-sign"></i> <%= @elf.price_per_day %>€ / jour</p>
         </div>
-        <%= link_to "Réserver", '#',class: "btn btn-primary btn-reserver", data: { action: "click->display-booking#display"} %>
+        <div class="btn_booking_show">
+        <%= link_to "Réserver", '#',class: "btn btn btn-primary text-white px-3 py-2 rounded-pill fs-10 mt-3", data: { action: "click->display-booking#display"} %>
+        </div>
       </div>
     </div>
   </div>
@@ -25,9 +27,12 @@
       <%= simple_form_for [@elf, @booking] do |f| %>
         <%= f.input :checkin, html5: true %>
         <%= f.input :checkout, html5: true %>
-        <%= f.button :submit, elf_bookings_path(@elf), value: "Réserver", class: "btn btn-primary text-align-right"%>
+        <div class= total_price>
+          <%= f.button :submit, value: "Réserver", class: "btn btn btn-primary text-white px-3 py-2 rounded-pill fs-10 mt-3"%>
+          <p>200€</p>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
-<%= link_to "Retour à la liste", elves_path, class: "btn btn-primary" %>
+<%= link_to "Retour à la liste", elves_path, class: "btn_return_show" %>
