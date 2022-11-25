@@ -5,6 +5,8 @@ class Owner::BookingsController < ApplicationController
     @elves = current_user.elves
   end
 
+  private
+
   def accept
   end
 
