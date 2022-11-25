@@ -15,7 +15,7 @@
               <div class="owner-booking-elf-card">
                 <h3><%= booking.elf.name %></h3>
                 <div class="owner-booking-card-item-container">
-                  <%= cl_image_tag elf.photo.key %>
+                  <%= cl_image_tag booking.elf.photo.key %>
                   <div class="owner-elf-card-item">
                     <p>Du: <%= booking.checkin %></p>
                     <p>Au: <%= booking.checkout %></p>
