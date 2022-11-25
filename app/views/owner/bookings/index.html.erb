@@ -10,12 +10,22 @@
 <h3>En attente :</h3>
 
 <% if @bookings.where(status: 'pending').any? %>
-  <% @bookings.where(status: 'pending').each do |booking| %>
-    <%= booking.elf.name %><br>
-    <%= booking.status %><br>
-    <%= booking.checkin %><br>
-    <%= booking.checkout %><br>
-  <% end %>
+  <div class="owner-booking-container">
+    <% @bookings.where(status: 'pending').each do |booking| %>
+      <div class="owner-booking-elf-card">
+        <h3><%= booking.elf.name %></h3>
+        <div class="owner-booking-card-item-container">
+          <%= cl_image_tag elf.photo.key %>
+          <div class="owner-elf-card-item">
+            <p>Du: <%= booking.checkin %></p>
+            <p>Au: <%= booking.checkout %></p>
+              <button class="btn btn-success">Accepter</button>
+              <button class="btn btn-danger">Refuser</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% else %>
   <p>Vous n'avez aucune réservation en attente de réponse.</p>
 <% end %>
@@ -26,23 +36,41 @@
 <h3>Réservations prévues ou en cours :</h3>
 
 <% if @bookings.where(status: 'settled').any? %>
-  <% @bookings.where(status: 'settled')
-              .or(@bookings.where(status: 'declined'))
-              .each do |booking| %>
-    <%= booking.elf.name %><br>
-    <%= booking.status %><br>
-    <%= booking.checkin %><br>
-    <%= booking.checkout %><br>
-  <% end %>
+  <div class="owner-booking-container">
+    <% @bookings.where(status: 'settled')
+                .or(@bookings.where(status: 'declined'))
+                .each do |booking| %>
+      <div class="owner-booking-elf-card">
+        <h3><%= booking.elf.name %></h3>
+        <div class="owner-booking-card-item-container">
+          <%= cl_image_tag booking.elf.photo.key %>
+          <div class="owner-elf-card-item">
+            <p>Du: <%= booking.checkin %></p>
+            <p>Au: <%= booking.checkout %></p>
+              <button class="btn btn-success">Acceptée</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% elsif @bookings.where(status: 'declined').any? %>
-  <% @bookings.where(status: 'declined')
-              .or(@bookings.where(status: 'declined'))
-              .each do |booking| %>
-    <%= booking.elf.name %><br>
-    <%= booking.status %><br>
-    <%= booking.checkin %><br>
-    <%= booking.checkout %><br>
-  <% end %>
+  <div class="owner-booking-container">
+    <% @bookings.where(status: 'declined')
+                .or(@bookings.where(status: 'declined'))
+                .each do |booking| %>
+      <div class="owner-booking-elf-card">
+        <h3><%= booking.elf.name %></h3>
+        <div class="owner-booking-card-item-container">
+          <%= cl_image_tag elf.photo.key %>
+          <div class="owner-elf-card-item">
+            <p>Du: <%= booking.checkin %></p>
+            <p>Au: <%= booking.checkout %></p>
+              <button class="btn btn-danger">Refusée</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% else %>
   <p>Vous n'avez .</p>
 <% end %>
@@ -60,43 +88,51 @@
 
   <% @elves.each do |elf| %>
     <% if elf.bookings.where(status: 'pending') %>
-      <% elf.bookings.where(status: 'pending').each do |booking| %>
-        <div class="owner-elf-container">
-          <div class="owner-elf-card">
-            <p><%= booking.elf.name %></p>
-            <%= cl_image_tag elf.photo.key %>
-            <p>Du: <%= booking.checkin %></p>
-            <p>Au: <%= booking.checkout %></p>
-            <button class="btn btn-success">Accepter</button>
-            <button class="btn btn-danger">Refuser</button>
+      <div class="owner-booking-container">
+        <% elf.bookings.where(status: 'pending').each do |booking| %>
+          <div class="owner-booking-elf-card">
+            <h3><%= booking.elf.name %></h3>
+            <div class="owner-booking-card-item-container">
+              <%= cl_image_tag elf.photo.key %>
+              <div class="owner-elf-card-item">
+                <p>Du: <%= booking.checkin %></p>
+                <p>Au: <%= booking.checkout %></p>
+                  <button class="btn btn-success">Accepter</button>
+                  <button class="btn btn-danger">Refuser</button>
+              </div>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% else %>
       <p>Personne n'a demandé à réserver vos elfes pour l'instant.</p>
     <% end %>
   <% end %>
 
   <%# Les réservations que j'ai déjà acceptées %>
-  <h3>Réservations prévues ou en cours :</h3>
+  <h2>Réservations prévues ou en cours :</h2>
 
   <% @elves.each do |elf| %>
     <% if elf.bookings.where(status: 'settled') %>
-      <% elf.bookings.where(status: 'settled').each do |booking| %>
-        <div class="owner-elf-container">
-          <div class="owner-elf-card">
-            <p><%= booking.elf.name %></p>
-            <%= cl_image_tag elf.photo.key %>
-            <p>Du: <%= booking.checkin %></p>
-            <p>Au: <%= booking.checkout %></p>
-            <% if booking.status == 'settled' %>
-              <button class="btn btn-success">Accepté</button>
-            <% else %>
-              <button class="btn btn-danger">Refusée</button>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+      <div class="owner-booking-container">
+        <% elf.bookings.where(status: 'settled').each do |booking| %>
+            <div class="owner-booking-elf-card">
+              <h3><%= booking.elf.name %></h3>
+              <div class="owner-booking-card-item-container">
+                <%= cl_image_tag elf.photo.key %>
+                <div class="owner-elf-card-item">
+                  <p>Du: <%= booking.checkin %></p>
+                  <p>Au: <%= booking.checkout %></p>
+                  <% if booking.status == 'settled' %>
+                    <button class="btn btn-success">Accepté</button>
+                  <% else %>
+                    <button class="btn btn-danger">Refusée</button>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
     <% else %>
       <p>Aucun de vos elfes n'est réservé pour l'instant.</p>
     <% end %>
