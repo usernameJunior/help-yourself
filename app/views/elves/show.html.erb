@@ -24,12 +24,12 @@
 
   <div class="container-form-booking <%= 'inactive' unless @booking.errors.any? %>" data-display-booking-target="form">
     <div class="form-booking">
-      <%= simple_form_for [@elf, @booking] do |f| %>
-        <%= f.input :checkin, html5: true %>
-        <%= f.input :checkout, html5: true %>
-        <div class= total_price>
+      <%= simple_form_for [@elf, @booking], data: { controller: "total-price", total_price_per_day_value: @elf.price_per_day } do |f| %>
+        <%= f.input :checkin, html5: true, input_html: { data: { total_price_target: "checkin", action: "total-price#computePrice" } }%>
+        <%= f.input :checkout, html5: true, input_html: { data: { total_price_target: "checkout", action: "total-price#computePrice" } }%>
+        <div class= container_total_price>
           <%= f.button :submit, value: "Réserver", class: "btn btn btn-primary text-white px-3 py-2 rounded-pill fs-10 mt-3"%>
-          <p>200€</p>
+          <div data-total-price-target="totalPriceDiv" class= total_price></div>
         </div>
       <% end %>
     </div>
