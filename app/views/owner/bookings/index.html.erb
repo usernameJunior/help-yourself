@@ -1,4 +1,16 @@
-<h1>Tableau de bord</h1>
+<h1 class="ms-5">Tableau de bord</h1>
+
+<div class="container-dashboard">
+
+<%# ##############  ############## %>
+
+  <div class="dashboard my-bookings">
+<%# ##########  ########## %>
+    <h2>Mes réservations</h2>
+<%# ##########  ########## %>
+    <div class="card mybookings">
+      <div class="elf-grid">
+<%# ##########  ########## %>
 
 <%############# 1-LES ELFES DES AUTRES ############%>
 
@@ -74,6 +86,20 @@
 <% else %>
   <p>Vous n'avez .</p>
 <% end %>
+<%# ##########  ########## %>
+      </div>
+    </div>
+  </div>
+
+<%# ##############  ############## %>
+
+  <div class="dashboard elves-bookings">
+<%# ##########  ########## %>
+    <h2>Les réservations de mes elfes</h2>
+<%# ##########  ########## %>
+    <div class="card mybookings">
+      <div class="elf-grid">
+<%# ##########  ########## %>
 
 <%############ 2-MES ELFES ############%>
 
@@ -142,23 +168,27 @@
   <p>Je n'ai aucun elfe à proposer !</p>
   <%= link_to 'Ajouter un elfe', new_elf_path %>
 <% end %>
+<%# ##########  ########## %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%# ############################ %>
 <h2>Tous mes elfes</h2>
-
 <div class="owner-elf-container">
-  <% @elves.each do |elf| %>
-    <div class="owner-elf-card">
-      <%= link_to elf_path(elf), class: "text-decoration-none text-dark" do %>
-        <%= cl_image_tag elf.photo.key %>
-        <p><%= elf.name %></p>
-      <% end %>
-    </div>
-  <% end %>
-    <div class="owner-elf-card">
-      <%= link_to new_elf_path, class: "text-decoration-none text-dark" do %>
-        <%= image_tag 'avatar.png', class: 'owner-add-elf-img' %>
-        <p class="owner-add-elf-p">Nouvel elfe</p>
-      <% end %>
-    </div>
-</div>
+    <% @elves.each do |elf| %>
+      <div class="owner-elf-card">
+        <%= link_to elf_path(elf), class: "text-decoration-none text-dark" do %>
+          <%= cl_image_tag elf.photo.key %>
+          <p><%= elf.name %></p>
+        <% end %>
+      </div>
+    <% end %>
+      <div class="owner-elf-card">
+        <%= link_to new_elf_path, class: "text-decoration-none text-dark" do %>
+          <%= image_tag 'avatar.png', class: 'owner-add-elf-img' %>
+          <p class="owner-add-elf-p">Nouvel elfe</p>
+        <% end %>
+      </div>
+  </div>
