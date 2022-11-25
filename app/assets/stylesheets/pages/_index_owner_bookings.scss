@@ -1,0 +1,65 @@
+h2 {
+  margin-left: 2rem;
+}
+.container-dashboard {
+  display: flex;
+  // width: auto;
+  // padding: 30px 50px;
+
+  .owner-elf-card {
+    background-color: yellow;
+    padding: 0.5rem;
+
+    img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      opacity: 0.9;
+    }
+  }
+
+  .dashboard {
+    border-color: lightgrey 1px solid;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+
+    .card {
+      // overflow: hidden;
+      // height: 120px;
+      background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      align-items: left;
+      // display: flex;
+      border-radius: 15px;
+      margin: 2rem;
+      padding: 1rem;
+
+      // .elf-grid {
+      //   display: grid;
+      //   grid-template-columns: repeat(5, 1fr);
+      //   grid-gap: 10px;
+      //   grid-auto-rows: minmax(100px, auto);
+
+      // }
+    }
+  }
+
+  .elves-bookings {
+    flex-direction: row;
+    width: 50vw;
+
+  }
+
+  .my-bookings {
+    flex-direction: row;
+    width: 50vw;
+
+  }
+}
+.owner-elf-container {
+  margin: 2rem;
+
+}
