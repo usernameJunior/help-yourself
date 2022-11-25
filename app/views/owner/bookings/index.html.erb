@@ -1,21 +1,40 @@
 <h1>Tableau de bord</h1>
 
-<h2>Mes demandes de réservation</h2>
-<p>TODO : bookings à accepter ou décliner</p>
+<%############# 1-LES ELFES DES AUTRES ############%>
 
 <h2>Les elfes que j'ai réservés</h2>
 
-<% @bookings.each do |booking| %>
+<%# Les réservations que j'ai demandées,
+    dont j'attend la réponse %>
+<h3>En attente :</h3>
+<% @bookings.where(status: 'pending').each do |booking| %>
   <%= booking.elf.name %><br>
   <%= booking.status %><br>
   <%= booking.checkin %><br>
   <%= booking.checkout %><br>
 <% end %>
 
+<%# Les réservations que j'ai demandées,
+    auxquelles les users ont répondu %>
+<h3>Réservations prévues ou en cours :</h3>
+<% @bookings.where(status: 'settled')
+            .or(@bookings.where(status: 'settled'))
+            .each do |booking| %>
+  <%= booking.elf.name %><br>
+  <%= booking.status %><br>
+  <%= booking.checkin %><br>
+  <%= booking.checkout %><br>
+<% end %>
+
+<%############ 2-MES ELFES ############%>
+
 <h2>Les réservations de mes elfes</h2>
 
+<%# Les réservations d'autres users,
+    en attente de MA réponse %>
+<h3>En attente :</h3>
 <% @elves.each do |elf| %>
-  <% elf.bookings.each do |booking| %>
+  <% elf.bookings.where(status: 'pending').each do |booking| %>
   <%= booking.elf.name %><br>
   <%= booking.status %><br>
   <%= booking.checkin %><br>
@@ -23,6 +42,19 @@
   <% end %>
 <% end %>
 
+
+<%# Les réservations que j'ai déjà acceptées %>
+<h3>Réservations prévues ou en cours :</h3>
+<% @elves.each do |elf| %>
+  <% elf.bookings.where(status: 'settled').each do |booking| %>
+  <%= booking.elf.name %><br>
+  <%= booking.status %><br>
+  <%= booking.checkin %><br>
+  <%= booking.checkout %><br>
+  <% end %>
+<% end %>
+
+<%# ############################ %>
 <h2>Tous mes elfes</h2>
 
 <div class="owner-elf-container">
