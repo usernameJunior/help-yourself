@@ -19,8 +19,7 @@
                   <div class="owner-elf-card-item">
                     <p>Du: <%= booking.checkin %></p>
                     <p>Au: <%= booking.checkout %></p>
-                      <button class="btn btn-success">Accepter</button>
-                      <button class="btn btn-danger">Refuser</button>
+                    <button class="btn btn-outline-success">En attente</button>
                   </div>
                 </div>
               </div>
@@ -46,7 +45,7 @@
                   <div class="owner-elf-card-item">
                     <p>Du: <%= booking.checkin %></p>
                     <p>Au: <%= booking.checkout %></p>
-                      <button class="btn btn-success">Acceptée</button>
+                    <button class="btn btn-outline-success">Acceptée</button>
                   </div>
                 </div>
               </div>
@@ -64,14 +63,14 @@
                   <div class="owner-elf-card-item">
                     <p>Du: <%= booking.checkin %></p>
                     <p>Au: <%= booking.checkout %></p>
-                    <button class="btn btn-danger">Refusée</button>
+                    <button class="btn btn-outline-danger">Refusée</button>
                   </div>
                 </div>
               </div>
             <% end %>
           </div>
         <% else %>
-          <p>Vous n'avez .</p>
+          <p>Vous n'avez pas de réservation en cours.</p>
         <% end %>
       </div>
     </div>
@@ -80,7 +79,7 @@
   <div class="dashboard elves-bookings">
     <h2>Les réservations de mes elfes</h2>
     <div class="card mybookings">
-    <h3>En attente :</h3>
+      <h3>En attente :</h3>
       <div class="elf-grid">
         <% if @elves.any? %>
           <% @elves.each do |elf| %>
@@ -94,8 +93,14 @@
                       <div class="owner-elf-card-item">
                         <p>Du: <%= booking.checkin %></p>
                         <p>Au: <%= booking.checkout %></p>
-                          <button class="btn btn-success">Accepter</button>
-                          <button class="btn btn-danger">Refuser</button>
+                        <%= button_to 'Accepter',
+                                      accept_owner_booking_path(booking),
+                                      method: :patch,
+                                      class: 'btn btn-success' %>
+                        <%= button_to 'Refuser',
+                                      reject_owner_booking_path(booking),
+                                      method: :patch,
+                                      class: 'btn btn-danger' %>
                       </div>
                     </div>
                   </div>
@@ -122,9 +127,9 @@
                         <p>Du: <%= booking.checkin %></p>
                         <p>Au: <%= booking.checkout %></p>
                         <% if booking.status == 'settled' %>
-                          <button class="btn btn-success">Accepté</button>
+                          <button class="btn btn-outline-success">Acceptée</button>
                         <% else %>
-                          <button class="btn btn-danger">Refusée</button>
+                          <button class="btn btn-outline-danger">Refusée</button>
                         <% end %>
                       </div>
                     </div>
@@ -144,7 +149,6 @@
   </div>
 </div>
 
-<%# ############################ %>
 <h2>Tous mes elfes</h2>
 <div class="owner-elf-container">
     <% @elves.each do |elf| %>
